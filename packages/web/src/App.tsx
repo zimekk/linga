@@ -5,7 +5,6 @@ import T, { DEFAULT_LOCALES, useTranslation } from "@dev/translations";
 const getLocales = (location: { hash: string }) => {
   const [path, hash = DEFAULT_LOCALES] =
     decodeURI(location.hash).match(/^#(.+)/) || [];
-  console.log();
   return hash;
 };
 

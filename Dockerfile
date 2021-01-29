@@ -3,7 +3,6 @@ WORKDIR /app
 # https://www.docker.com/blog/keep-nodejs-rockin-in-docker/
 ENV NODE_ENV development
 ADD . .
-ADD packages/web packages/web
 RUN set -ex; \
   if [ "$NODE_ENV" = "production" ]; then \
     yarn --no-cache --frozen-lockfile --production; \
