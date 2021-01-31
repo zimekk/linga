@@ -8,6 +8,10 @@ const getLocales = (location: { hash: string }) => {
   return hash;
 };
 
+const Text = ({ children }) => (
+  <div data-text={children.props.children}>{children}</div>
+);
+
 export default () => {
   const [locales, setLocales] = useState(getLocales(history.location));
   const [numPhotos, setNumPhotos] = useState(2);
@@ -22,9 +26,11 @@ export default () => {
   return (
     <section>
       <h1>
-        <T id="#linga" {...{ locales }}>
-          Linga
-        </T>
+        <Text>
+          <T id="#linga" {...{ locales }}>
+            Linga
+          </T>
+        </Text>
       </h1>
       <nav>
         <span>{t("Wybierz język", null, "#lang")}</span>
@@ -44,13 +50,15 @@ export default () => {
             )
           )}
       </nav>
-      <T component="article" id="#article" {...{ locales }}>{`# Nagłówek
+      <Text>
+        <T component="article" id="#article" {...{ locales }}>{`# Nagłówek
 
 Paragraf
 Paragraf
 
 Paragraf
 Paragraf`}</T>
+      </Text>
       <label>
         <span>numPhotos</span>
         <select
