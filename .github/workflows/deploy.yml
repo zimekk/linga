@@ -7,7 +7,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - name: Build in Docker
         run: docker-compose up --build
       - name: Deploy to gh-pages
@@ -15,5 +15,5 @@ jobs:
         with:
           # https://github.com/marketplace/actions/deploy-to-github-pages#using-an-ssh-deploy-key-
           # https://medium.com/@cmichel/how-to-deploy-a-create-react-app-with-github-actions-5e01f7a7b6b
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
