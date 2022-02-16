@@ -84,6 +84,18 @@ Paragraf`}</T>
         )}
       </p>
       <pre>{JSON.stringify({ locales, numPhotos }, null, 2)}</pre>
+      <p>
+        {t(`Dzisiaj jest`, {}, "#today")}:{" "}
+        {new Intl.DateTimeFormat("pl-PL", { dateStyle: "long" }).format(
+          new Date()
+        )}
+      </p>
+      <p>
+        {t(`Do zapłaty masz`, {}, "#topay")}:{" "}
+        {new Intl.NumberFormat("pl-PL", {
+          minimumFractionDigits: 2,
+        }).format(1234567.89)}
+      </p>
     </section>
   );
 };

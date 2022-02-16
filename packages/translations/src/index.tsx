@@ -23,6 +23,14 @@ const messages = {
     "pl-PL":
       "{numPhotos, plural,\n          =0 {Nie masz zdjęć.}\n          one {Masz jedno zdjęcie.}\n          few {Masz # zdjęcia.}\n          many {Masz # zdjęć.}\n          other {Masz # zdjęcia.}\n        }",
   },
+  "#today": {
+    "en-US": "Today is",
+    "pl-PL": "Dzisiaj jest",
+  },
+  "#topay": {
+    "en-US": "You have to pay",
+    "pl-PL": "Do zapłaty masz",
+  },
 };
 
 // https://formatjs.io/docs/intl-messageformat/
