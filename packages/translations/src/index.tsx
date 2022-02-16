@@ -1,6 +1,6 @@
 import React from "react";
 import IntlMessageFormat from "intl-messageformat";
-import marked from "marked";
+import { marked } from "marked";
 
 export const DEFAULT_LOCALES = "pl-PL";
 
@@ -54,11 +54,10 @@ const getLocalesMessage = (
   (messages[id] && messages[id][locales]) ||
   addLocalesMessage(id, locales, defaultMessage);
 
-export const useTranslation = (locales: string = DEFAULT_LOCALES) => (
-  message: string,
-  values: object,
-  id: string
-) => translate(getLocalesMessage(id, locales, message), values, locales);
+export const useTranslation =
+  (locales: string = DEFAULT_LOCALES) =>
+  (message: string, values: object, id: string) =>
+    translate(getLocalesMessage(id, locales, message), values, locales);
 
 export default ({
   children: message,

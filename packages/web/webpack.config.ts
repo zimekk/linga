@@ -1,6 +1,7 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import * as path from "path";
 import * as webpack from "webpack";
+import "webpack-dev-server";
 import env from "dotenv";
 
 env.config({ path: path.resolve(__dirname, "../../.env") });
